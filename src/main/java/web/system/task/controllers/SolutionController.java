@@ -24,7 +24,7 @@ public class SolutionController {
 
         SolutionModel solutionModel = solutionService.create(parseToSolutionModel(requestDto));
         SolutionModelResponseDto responseDto = parseToResponseDto(solutionModel);
-        if (responseDto.getD() == 0) {
+        if (responseDto.getD() < 0) {
             return "notFoundSolution";
         }
 
